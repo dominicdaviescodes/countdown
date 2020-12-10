@@ -1,8 +1,9 @@
-const startTiming = 25;
+const startTiming = 0.1;
 let time = startTiming * 60;
 
 const count = document.getElementById('countdownTimer');
 setInterval(updateTimer, 1000);
+
 function updateTimer() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
@@ -11,4 +12,8 @@ function updateTimer() {
   seconds = seconds < 10 ? '0' + seconds : seconds;
   count.innerHTML = `${minutes}:${seconds}`;
   time--;
+
+  if (minutes <= 0 && seconds <= 00) {
+    clearInterval((time = 0));
+  }
 }
