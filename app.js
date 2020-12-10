@@ -1,4 +1,4 @@
-const startTiming = 0.1;
+const startTiming = 25;
 let time = startTiming * 60;
 
 const count = document.getElementById('countdownTimer');
